@@ -57,11 +57,11 @@ const Edit = () => {
                     <label><h4>Rate</h4></label>
                     <input type="number" onChange={e => setRate(e.target.value)} value={rate}/>
                 </div>
-                <h4 onClick={() => handleVisited()}  className={visited ? 'visited completed-h4': 'completed-h4'}>Completed</h4>
+                <button onClick={() => handleVisited()}  className={visited ? 'btn selected': 'btn'}>Completed</button>
             </div>
 
             <div className="delete-save">
-                <button className="btn" onClick={() => handleDelete(editID)}>Delete</button>
+                <button className="btn delete" onClick={() => handleDelete(editID)}>Delete</button>
                 <button className="btn" onClick={() => handleSave()}>Save</button>
             </div>
             

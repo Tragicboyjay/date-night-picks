@@ -41,46 +41,40 @@ const Add = () => {
     const handleSubmit = event => {
         event.preventDefault();
 
+        setError({
+            error: false,
+            msg: ''
+        });
+
         if (activityinput === '') {
             setError({
                 error: true,
                 msg: 'Please enter a value before submitting'
             })
 
-            return
+            return;
         }
 
-        if (restaurantChecked) {
-
-            const newRestaurant = {
-                id: generateRandomId(),
-                name: activityinput.toUpperCase(),
-                visited: false,
-                rate: null,
-                type: 'restaurant'
-            }
-
-            const newActivitiesList = [...allActivities,newRestaurant];
-            localStorage.setItem("DNP", JSON.stringify(newActivitiesList));
-        }
-
-        if (activityChecked) {
-
+        const activites = []
+        activityinput.split('\n').map(activity => {
             const newActivity = {
                 id: generateRandomId(),
-                name: activityinput.toUpperCase(),
+                name: activity.toUpperCase(),
                 visited: false,
                 rate: null,
-                type: 'activity'
+                type: restaurantChecked ? 'restaurant' : 'activity'
             }
+            activites.push(newActivity)
 
-            const newActivitiesList = [...allActivities,newActivity];
-            localStorage.setItem("DNP", JSON.stringify(newActivitiesList));
-        }
+        })
 
-        if (!error.error) {
-            setActivityInput('')
-        }
+
+        const newActivitiesList = [...allActivities,...activites];
+        localStorage.setItem("DNP", JSON.stringify(newActivitiesList));
+
+       
+        setActivityInput('')
+        
 
     }
 
@@ -88,11 +82,17 @@ const Add = () => {
         <form id="add" onSubmit={handleSubmit}>
             <h2>Enter an Activity or Restaurant</h2>
             <p className="error">{error.msg}</p>
-            <input 
+            <textarea 
                 type="text"
                 value={activityinput}
                 onChange={e => setActivityInput(e.target.value)}
-            />
+            ></textarea>
+            <p>To add multiple activities seperate your list by new line (using the enter key between activities)</p>
+            {/* <input 
+                type="text"
+                value={activityinput}
+                onChange={e => setActivityInput(e.target.value)}
+            /> */}
 
             <div id="checks">
                 <input 
