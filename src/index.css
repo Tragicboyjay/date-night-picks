@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  /* color variables */
+
+  /* light mode variables  */
+  --text: #050315;
+  --background: #fbfbfe;
+  --primary: #2f27ce;
+  --secondary: #dedcff;
+  --accent: #433bff;
+
+  /* dark mode variables */
+  --textD: #ebe9fc;
+  --backgroundD: #010104;
+  --PrimaryD: #3a31d8;
+  --secondaryD: #020024;
+  --accentD: #0600c2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Jost, sans-serif;
+}
+
+body {
+  width: 100dvw;
+  background-color: var(--secondary);
+  overflow-x: hidden;
+}
+
+/* container styles */
+.App {
+  width: 75%;
+  max-width: 960px;
+  margin: 5rem auto;
+  padding: 2rem;
+
+}
+
+/* header styles */
+header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+header h1 {
+  color: var(--primary);
+}
+
+/* nav styles  */
+nav {
+  width: 100%;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+nav ul li {
+  cursor: pointer;
+  padding: .25rem;
+  font-weight: bold;
+  text-align: center;
+} 
+
+/* state styles */
+#picker, #add, #all, #edit{
+  width: 80%;
+  margin: 1rem auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: var(--background);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#add #checks {
+  display: flex;
+  gap: 1rem;
+}
+
+/* all styles */
+.all-container {
+  /* border: 2px solid var(--accent); */
+  width: 90%;
+  padding: .5rem 1rem;
+  max-height: 175px;
+  overflow-y: auto;
+}
+
+.all-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  padding: .5rem;
+}
+
+.all-row h4, .all-row input {
+  width: 33%;
+}
+
+.all-row:not(:last-child) {
+  border-bottom: 1px solid var(--primary);
+}
+#edit-container{
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+}
+
+.rate-input {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.rate-input input[type="number"] {
+  width: 3rem;
+}
+
+.completed-h4 {
+  cursor: pointer;
+  font-weight: bolder;
+  padding: .25rem;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+}
+
+.completed-h4:hover{
+  background-color: var(--accent);
+  color: var(--background);
+}
+
+
+.delete-save {
+  display: flex;
+  gap: .5rem;
+}
+
+.delete-save button {
+  width: 4rem;
+}
+/* how it works styles */
+#how-it-works {
+  text-align: center;
+}
+
+#how-it-works #hiw-title {
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+/* footer styles */
+footer {
+  margin-top: 2rem;
+  width: 100%;
+  text-align: center;
+  
+}
+
+/* general classes */
+.btn, #activitySelect, input{
+  padding: .25rem;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  font-weight: bolder;
+  text-align: center;
+  background: none;
+}
+
+.btn:hover {
+  color: var(--background);
+  background-color: var(--accent);
+}
+
+.active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+.error {
+  color: red;
+}
+
+.border-none {
+  border: none;
+}
+
+.visited {
+  background-color: var(--accent);
+  color: var(--background);
+}
