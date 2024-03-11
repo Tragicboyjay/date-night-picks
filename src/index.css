@@ -232,7 +232,19 @@ footer {
   }
 
   #all-nav {
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 1rem;
+  }
+
+  #all-nav ul{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .active {
+    width: 6rem;
   }
 }
