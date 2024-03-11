@@ -9,8 +9,9 @@ const Picker = () => {
         let randomActivity;
 
         const allActivitiesData = localStorage.getItem("DNP");
-        const allActivities = allActivitiesData ? JSON.parse(allActivitiesData) : [];
-
+        let allActivities = allActivitiesData ? JSON.parse(allActivitiesData) : [];
+        allActivities = allActivities.filter(activity => !activity.visited);
+        
         const restaurants = allActivities.filter(activity => activity.type === 'restaurant');
         const activities = allActivities.filter(activity => activity.type === 'activity');
         
