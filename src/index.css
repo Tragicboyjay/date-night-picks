@@ -42,11 +42,12 @@ body {
 /* header styles */
 header {
   text-align: center;
-  margin-bottom: 1rem;
+  margin: 0 auto 1rem auto;
 }
 
 header h1 {
   color: var(--primary);
+  text-align: center;
 }
 
 /* nav styles  */
@@ -89,7 +90,6 @@ nav ul li {
 
 /* all styles */
 .all-container {
-  /* border: 2px solid var(--accent); */
   width: 90%;
   padding: .5rem 1rem;
   max-height: 175px;
@@ -218,12 +218,16 @@ footer {
 
 @media only screen and (max-width: 420px) {
 
+  body, .App, nav ul li, #picker, #add, #all, #edit, .all-row h4, .all-row input {
+    font-size: 95%;
+  }
+
   .all-row {
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 1rem;
   }
 
-  #all-nav {
+  #all-nav ul{
     border-bottom: 1px solid var(--accent);
     padding-bottom: 1rem;
   }

@@ -1,7 +1,7 @@
 import { useAtom } from "jotai";
 // import data from "../atoms/data";
 import state from "../atoms/state"
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import currentEdit from "../atoms/currentEdit";
 
 const All = () => {
@@ -9,10 +9,26 @@ const All = () => {
     const [allState, setAllState] = useState('completed');
     const [, setEditID] = useAtom(currentEdit);
 
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [showNav, setShowNav] = useState(false);
+
+    useEffect(() => {
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+        setShowNav(windowWidth > 420);
+      };
+  
+      window.addEventListener('resize', handleResize);
+  
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []); // Empty dependency array to run effect only once
+
     const stars = number => {
         let stars = []
         for (let i = number; i > 0; i--){
-            stars.push(<i className="fa-regular fa-star"></i>)
+            stars.push(<i style={{color: 'var(--accent)'}} className="fa-solid fa-star"></i>)
         }
         return stars
     };
@@ -20,6 +36,10 @@ const All = () => {
     const handleEdit = id => {
         setState('edit')
         setEditID(id)
+    }
+
+    const handleShowNav = () => {
+        showNav ? setShowNav(false) : setShowNav(true);
     }
 
     const allActivitiesData = localStorage.getItem("DNP");
@@ -33,12 +53,15 @@ const All = () => {
         <div id="all">
             <h2>All Activities</h2>
             <nav id="all-nav">
-                <ul >
-                    <li className={allState === 'completed'? 'active': undefined} onClick={() => setAllState('completed')}>Completed</li>
-                    <li className={allState === 'activities'? 'active': undefined} onClick={() => setAllState('activities')}>Activities</li>
-                    <li className={allState === 'restaurants'? 'active': undefined} onClick={() => setAllState('restaurants')}>Restaurants</li>
-                    <li className={allState === 'all'? 'active': undefined} onClick={() => setAllState('all')}>All</li>
-                </ul>
+                {windowWidth < 420 && <h3 onClick={() => handleShowNav()}><i style={{color: 'var(--accent)'}}  className="fa-solid fa-bars"></i></h3>}
+                { showNav || windowWidth > 420 ?  
+                    <ul>
+                        <li className={allState === 'completed'? 'active': undefined} onClick={() => setAllState('completed')}>Completed</li>
+                        <li className={allState === 'activities'? 'active': undefined} onClick={() => setAllState('activities')}>Activities</li>
+                        <li className={allState === 'restaurants'? 'active': undefined} onClick={() => setAllState('restaurants')}>Restaurants</li>
+                        <li className={allState === 'all'? 'active': undefined} onClick={() => setAllState('all')}>All</li>
+                    </ul>
+                : undefined}
             </nav>
 
             
