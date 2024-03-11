@@ -17,18 +17,30 @@ const Picker = () => {
 
         switch (activity) {
             case 'resto':
+                if (restaurants.length < 1) {
+                    setChoice('Please add some restaurants to get a random choice')
+                    break;
+                }
                 randomIndex = Math.floor(Math.random() * restaurants.length);
                 randomActivity = restaurants[randomIndex];
                 setChoice(randomActivity.name);
                 break;
 
             case 'activity':
+                if (activities.length < 1) {
+                    setChoice('Please add some activities to get a random choice')
+                    break;
+                }
                 randomIndex = Math.floor(Math.random() * activities.length);
                 randomActivity = activities[randomIndex];
                 setChoice(randomActivity.name);
                 break;
 
             case 'both':
+                if (allActivities.length < 1) {
+                    setChoice('Please add some activities to get a random choice')
+                    break;
+                }
                 randomIndex = Math.floor(Math.random() * allActivities.length);
                 randomActivity = allActivities[randomIndex];
                 setChoice(randomActivity.name);
