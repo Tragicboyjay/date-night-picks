@@ -32,8 +32,8 @@ const All = () => {
     return (  
         <div id="all">
             <h2>All Activities</h2>
-            <nav>
-                <ul>
+            <nav >
+                <ul id="all-nav">
                     <li className={allState === 'completed'? 'active': undefined} onClick={() => setAllState('completed')}>Completed</li>
                     <li className={allState === 'activities'? 'active': undefined} onClick={() => setAllState('activities')}>Activities</li>
                     <li className={allState === 'restaurants'? 'active': undefined} onClick={() => setAllState('restaurants')}>Restaurants</li>
