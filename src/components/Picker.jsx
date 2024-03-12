@@ -1,16 +1,22 @@
 import { useState } from "react";
 
 const Picker = () => {
-    const [choice, setChoice] = useState('Please tap the button to select a random activity');
+    const allActivitiesData = localStorage.getItem("DNP");
+    let allActivities = allActivitiesData ? JSON.parse(allActivitiesData) : [];
+    allActivities = allActivities.filter(activity => !activity.visited);
+
+    
+
+    const [choice, setChoice] = useState(
+        allActivities.length > 1 ?
+        'Please tap the button to receive a random activity suggestion' :
+        "To start receiving random activity suggestions, please add activities to your list"
+    );
     const [activity, setActivity] = useState('resto');
 
     const getRandomChoice = () => {
         let randomIndex;
         let randomActivity;
-
-        const allActivitiesData = localStorage.getItem("DNP");
-        let allActivities = allActivitiesData ? JSON.parse(allActivitiesData) : [];
-        allActivities = allActivities.filter(activity => !activity.visited);
         
         const restaurants = allActivities.filter(activity => activity.type === 'restaurant');
         const activities = allActivities.filter(activity => activity.type === 'activity');
