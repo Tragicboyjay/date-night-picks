@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const Picker = () => {
-    const [choice, setChoice] = useState('Click the button for a Random choice!');
+    const [choice, setChoice] = useState('Please tap the button to select a random activity');
     const [activity, setActivity] = useState('resto');
 
     const getRandomChoice = () => {

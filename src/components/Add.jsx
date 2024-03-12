@@ -19,7 +19,7 @@ const Add = () => {
             setActivityChecked(true)
             setRestaurantChecked(false)
         }
-        else if (which === 'restaurant') {
+        else {
             setActivityChecked(false)
             setRestaurantChecked(true)
         }
@@ -80,36 +80,31 @@ const Add = () => {
 
     return (  
         <form id="add" onSubmit={handleSubmit}>
-            <h2>Enter an Activity or Restaurant</h2>
+            <h2>Add an Activity or Restaurant</h2>
             <p className="error">{error.msg}</p>
             <textarea 
                 type="text"
                 value={activityinput}
                 onChange={e => setActivityInput(e.target.value)}
             ></textarea>
-            <p>To add multiple activities seperate your list by new line (using the enter key between activities)</p>
-            {/* <input 
-                type="text"
-                value={activityinput}
-                onChange={e => setActivityInput(e.target.value)}
-            /> */}
+            <p>To add multiple activities, please enter each activity on a separate line</p>
 
             <div id="checks">
-                <input 
-                    type="checkbox"
-                    checked={activityChecked}
-                    onChange={() => handleCheckbox('activity')} 
-                />
-                <label>Activity</label>
+                <button
+                    onClick={() => handleCheckbox('activity')}
+                    type="button"
+                    className={activityChecked ? "btn selected": "btn"}
+                    style={{width: '5rem'}}
+                >Activity</button>
 
-                <input 
-                    type="checkbox"
-                    checked={restaurantChecked}
-                    onChange={() => handleCheckbox('restaurant')} 
-                />
-                <label>Restaurant</label>  
+                <button 
+                    onClick={() => handleCheckbox('restaurant')} 
+                    type="button"
+                    className={restaurantChecked ? "btn selected": "btn"}
+                    style={{width: '5rem'}}
+                >Restaurant</button>  
             </div>
-            <button className="btn" type="submit">Add</button>
+            <button style={{width: '4rem'}}  className="btn" type="submit">Add</button>
         </form>
     );
 }

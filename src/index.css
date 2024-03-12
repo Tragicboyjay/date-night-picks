@@ -158,6 +158,15 @@ footer {
   
 }
 
+footer h3 {
+  margin-bottom: .5rem;
+}
+
+footer h3 a {
+  color: var(--text);
+  text-decoration: none;
+}
+
 /* general classes */
 .btn, #activitySelect, input, textarea{
   padding: .25rem;
@@ -227,7 +236,7 @@ footer {
     gap: 1rem;
   }
 
-  #all-nav ul{
+  #all-nav {
     border-bottom: 1px solid var(--accent);
     padding-bottom: 1rem;
   }
