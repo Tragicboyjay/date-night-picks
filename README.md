@@ -14,7 +14,7 @@ Date Night Picks is a web application designed to help users manage their date n
 
 #### Usage
 
-1. **Start Planning Your Date Nights Now!** Visit `[PLACEHOLDER_WEB_URL]` to start using Date Night Picks and plan your next memorable date night effortlessly!
+1. **Start Planning Your Date Nights Now!** Visit https://datenightpicks.netlify.app/ to start using Date Night Picks and plan your next memorable date night effortlessly!
 
 2. **Get Started**: Navigate through the app using the navigation bar at the top of the page. Choose between options like "Random Activity," "All Activities," and "Add Activity" to access different features.
 
