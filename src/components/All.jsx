@@ -56,10 +56,10 @@ const All = () => {
                 {windowWidth < 420 && <h3 onClick={() => handleShowNav()}><i style={{color: 'var(--accent)'}}  className="fa-solid fa-bars"></i></h3>}
                 { showNav || windowWidth > 420 ?  
                     <ul>
-                        <li className={allState === 'completed'? 'active': undefined} onClick={() => setAllState('completed')}>Completed</li>
-                        <li className={allState === 'activities'? 'active': undefined} onClick={() => setAllState('activities')}>Activities</li>
-                        <li className={allState === 'restaurants'? 'active': undefined} onClick={() => setAllState('restaurants')}>Restaurants</li>
-                        <li className={allState === 'all'? 'active': undefined} onClick={() => setAllState('all')}>All</li>
+                        <li className={allState === 'completed'? 'active': undefined} onClick={() => {setAllState('completed'); if (windowWidth <= 420){setShowNav(false)}}}>Completed</li>
+                        <li className={allState === 'activities'? 'active': undefined} onClick={() => {setAllState('activities'); if (windowWidth <= 420){setShowNav(false)}}}>Activities</li>
+                        <li className={allState === 'restaurants'? 'active': undefined} onClick={() => {setAllState('restaurants'); if (windowWidth <= 420){setShowNav(false)}}}>Restaurants</li>
+                        <li className={allState === 'all'? 'active': undefined} onClick={() => {setAllState('all'); if (windowWidth <= 420){setShowNav(false)}}}>All</li>
                     </ul>
                 : undefined}
             </nav>
