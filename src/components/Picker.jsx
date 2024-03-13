@@ -9,10 +9,11 @@ const Picker = () => {
 
     const [choice, setChoice] = useState(
         allActivities.length > 1 ?
-        'Please tap the button to receive a random activity suggestion' :
+        'Tap the button to receive a random activity suggestion' :
         "To start receiving random activity suggestions, please add activities to your list"
     );
-    const [activity, setActivity] = useState('resto');
+    const [buttonDisabled,] = useState(allActivities.length < 1 ? true : false)
+    const [activity, setActivity] = useState('both');
 
     const getRandomChoice = () => {
         let randomIndex;
@@ -63,13 +64,15 @@ const Picker = () => {
                 onChange={e => setActivity(e.target.value)}
                 value={activity}
                 id="activitySelect"
-            >
+            >   
+                <option value="both">Both</option>
                 <option value="resto">Restaurants</option>
                 <option value="activity">Activities</option>
-                <option value="both">Both</option>
+                
             </select>
 
             <button
+                disabled={buttonDisabled}
                 onClick={getRandomChoice}
                 className="btn"
             >Get Random Choice!</button>

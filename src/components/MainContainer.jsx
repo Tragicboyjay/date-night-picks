@@ -7,6 +7,7 @@ import Edit from "./Edit";
 
 const MainContainer = () => {
     const [currentState, ] = useAtom(state);
+
     return (  
         <div id="main-container">
             {currentState === 'random' && <Picker />}
