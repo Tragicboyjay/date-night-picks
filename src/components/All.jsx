@@ -53,7 +53,7 @@ const All = () => {
         <div id="all">
             <h2>All Activities</h2>
             <nav id="all-nav">
-                {windowWidth < 420 && <h3 onClick={() => handleShowNav()}><i style={{color: 'var(--accent)'}}  className="fa-solid fa-bars"></i></h3>}
+                {windowWidth < 420 && <h3 className={windowWidth <= 420 && showNav ? "sidewaysOpened" : "sidewaysClosed"} onClick={() => handleShowNav()}><i style={{color: 'var(--accent)'}}  className="fa-solid fa-bars"></i></h3>}
                 { showNav || windowWidth > 420 ?  
                     <ul>
                         <li className={allState === 'completed'? 'active': undefined} onClick={() => {setAllState('completed'); if (windowWidth <= 420){setShowNav(false)}}}>Completed</li>

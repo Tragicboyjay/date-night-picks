@@ -259,3 +259,100 @@ footer h3 a {
     width: 6rem;
   }
 }
+
+/* animations */
+
+/* responsive nav button */
+@keyframes rotateSidewaysOpened {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+.sidewaysOpened {
+  animation: rotateSidewaysOpened .5s ease-in-out forwards;
+}
+
+@keyframes rotateSidewaysClosed {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.sidewaysClosed {
+  animation: rotateSidewaysClosed .25s ease-in-out forwards;
+}
+
+/* how it works arrow */
+@keyframes HIWSidewaysOpened {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+.HIWOpened {
+  animation: HIWSidewaysOpened .25s ease-in-out forwards;
+}
+
+/* @keyframes HIWSidewaysClosed {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.HIWClosed {
+  animation: HIWSidewaysClosed .5s ease-in-out forwards;
+} */
+
+@keyframes HIWBodyShown {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.HIWBodyShown {
+  animation: HIWBodyShown 1s ease-in-out forwards;
+}
+
+@keyframes HIWBodyHidden {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.HIWBodyHidden {
+  animation: HIWBodyHidden .5s ease-in-out forwards;
+}
+
+/* picker animations */
+/* @keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.bouncing {
+  animation: bounce 1s infinite;
+} */
+
