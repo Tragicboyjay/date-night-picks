@@ -303,7 +303,7 @@ footer h3 a {
   animation: HIWSidewaysOpened .25s ease-in-out forwards;
 }
 
-/* @keyframes HIWSidewaysClosed {
+@keyframes HIWSidewaysClosed {
   0% {
     transform: rotate(180deg);
   }
@@ -314,7 +314,7 @@ footer h3 a {
 
 .HIWClosed {
   animation: HIWSidewaysClosed .5s ease-in-out forwards;
-} */
+}
 
 @keyframes HIWBodyShown {
   0% {
@@ -335,6 +335,7 @@ footer h3 a {
   }
   100% {
     opacity: 0;
+    display: none;
   }
 }
 
