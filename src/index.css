@@ -335,6 +335,7 @@ footer h3 a {
   }
   100% {
     opacity: 0;
+    height: 0;
     display: none;
   }
 }
