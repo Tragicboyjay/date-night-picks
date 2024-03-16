@@ -17,9 +17,9 @@ const HIW = () => {
                 <h2 onClick={showHIWBody}>How It Works <i className={showHIW ? "fa-solid fa-chevron-down HIWOpened" : "fa-solid fa-chevron-down HIWClosed"}></i></h2>
                 
             </div>
-            {/* {showHIW &&  */}
-                <div id="hiw-body" className={showHIW ? "HIWBodyShown" : "HIWBodyHidden"}>
-                {/* <div id="hiw-body" > */}
+
+            <div id="hiw-body" className={showHIW ? "HIWBodyShown" : "HIWBodyHidden"}>
+
                 <p>
                     Welcome to Date Night Picks! This web application is
                     designed to make planning your date nights a breeze.
@@ -69,8 +69,7 @@ const HIW = () => {
                     options to access different features and make the most
                     out of your date nights.
                 </p>
-            </div>
-            {/* } */}
+        </div>
         </div>
     );
 }
