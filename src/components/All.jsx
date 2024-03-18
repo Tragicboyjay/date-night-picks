@@ -54,14 +54,13 @@ const All = () => {
             <h2>All Activities</h2>
             <nav id="all-nav">
                 {windowWidth < 420 && <h3 className={windowWidth <= 420 && showNav ? "sidewaysOpened" : "sidewaysClosed"} onClick={() => handleShowNav()}><i style={{color: 'var(--accent)'}}  className="fa-solid fa-bars"></i></h3>}
-                { showNav || windowWidth > 420 ?  
-                    <ul>
-                        <li className={allState === 'completed'? 'active': undefined} onClick={() => {setAllState('completed'); if (windowWidth <= 420){setShowNav(false)}}}>Completed</li>
-                        <li className={allState === 'activities'? 'active': undefined} onClick={() => {setAllState('activities'); if (windowWidth <= 420){setShowNav(false)}}}>Activities</li>
-                        <li className={allState === 'restaurants'? 'active': undefined} onClick={() => {setAllState('restaurants'); if (windowWidth <= 420){setShowNav(false)}}}>Restaurants</li>
-                        <li className={allState === 'all'? 'active': undefined} onClick={() => {setAllState('all'); if (windowWidth <= 420){setShowNav(false)}}}>All</li>
-                    </ul>
-                : undefined}
+                
+                <ul className={showNav || windowWidth > 420 ? "HIWBodyShown": "HIWBodyHidden"}>
+                    <li className={allState === 'completed'? 'active': undefined} onClick={() => {setAllState('completed'); if (windowWidth <= 420){setShowNav(false)}}}>Completed</li>
+                    <li className={allState === 'activities'? 'active': undefined} onClick={() => {setAllState('activities'); if (windowWidth <= 420){setShowNav(false)}}}>Activities</li>
+                    <li className={allState === 'restaurants'? 'active': undefined} onClick={() => {setAllState('restaurants'); if (windowWidth <= 420){setShowNav(false)}}}>Restaurants</li>
+                    <li className={allState === 'all'? 'active': undefined} onClick={() => {setAllState('all'); if (windowWidth <= 420){setShowNav(false)}}}>All</li>
+                </ul>
             </nav>
 
             
@@ -126,7 +125,7 @@ const All = () => {
                 </div>
             }
 
-            <button onClick={() => setState('add')} className="btn">ADD</button>
+            {/* <button onClick={() => setState('add')} className="btn">ADD</button> */}
         </div>
     );
 }

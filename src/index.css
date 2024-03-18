@@ -273,7 +273,7 @@ footer h3 a {
 }
 
 .sidewaysOpened {
-  animation: rotateSidewaysOpened .5s ease-in-out forwards;
+  animation: rotateSidewaysOpened .25s ease-in-out forwards;
 }
 
 @keyframes rotateSidewaysClosed {
@@ -313,13 +313,12 @@ footer h3 a {
 }
 
 .HIWClosed {
-  animation: HIWSidewaysClosed .5s ease-in-out forwards;
+  animation: HIWSidewaysClosed .25s ease-in-out forwards;
 }
 
 @keyframes HIWBodyShown {
   0% {
     opacity: 0;
-    height: 0;
     display: none;
   }
   100% {
@@ -337,7 +336,6 @@ footer h3 a {
   }
   100% {
     opacity: 0;
-    height: 0;
     display: none;
   }
 }
@@ -346,17 +344,4 @@ footer h3 a {
   animation: HIWBodyHidden .5s ease-in-out forwards;
 }
 
-/* picker animations */
-/* @keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.bouncing {
-  animation: bounce 1s infinite;
-} */
 
