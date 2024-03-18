@@ -319,6 +319,8 @@ footer h3 a {
 @keyframes HIWBodyShown {
   0% {
     opacity: 0;
+    height: 0;
+    display: none;
   }
   100% {
     opacity: 1;
